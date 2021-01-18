@@ -1,0 +1,48 @@
+﻿@using MVCTicariOtomasyon.Models.Siniflar
+@model List<Deparman>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Departman Listesi</h2>
+<table class="table table-bordered" style="margin-top:25;margin-left:25">
+
+    <tr>
+        <th>Id</th>
+        <th>Departman Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detay</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+
+    <tr>
+        <td>
+            @k.DepartmanId
+        </td>
+
+        <td>
+            @k.DepartmanAd
+        </td>
+        <td><a href="/Departman/DepartmanSil/@k.DepartmanId" class="btn btn-dark">Sil</a></td>
+        <td><a href="/Departman/DepartmanGetir/@k.DepartmanId" class="btn btn-light">Güncelle</a></td>
+        <td><a href="/Departman/DepartmanDetay/@k.DepartmanId" class="btn btn-flat" style="background-color:burlywood">Departman Detay</a></td>
+        @*<th>Id</th>
+            <th>KategoriAdı</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Beyaz Eşya</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Küçük Ev Aletleri</td>*@
+    </tr>
+
+    }
+
+</table>
+<a href="/Departman/DepartmanEkle" class="btn btn-info">Departman Ekle</a>
+

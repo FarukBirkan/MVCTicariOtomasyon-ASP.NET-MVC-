@@ -1,0 +1,44 @@
+﻿@using MVCTicariOtomasyon.Models.Siniflar
+@model List<Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:25;margin-left:25">
+
+    <tr>
+        <th>Id</th>
+        <th>Kategori</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+
+    <tr>
+        <td>
+            @k.KategoriId
+        </td>
+
+        <td>
+            @k.KategoriAdi
+        </td>
+        <td><a href="/Kategori/KategoriSil/@k.KategoriId" class="btn btn-dark">Sil</a></td>
+        <td><a href="/Kategori/KategoriGetir/@k.KategoriId" class="btn btn-light">Güncelle</a></td>
+        @*<th>Id</th>
+            <th>KategoriAdı</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Beyaz Eşya</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Küçük Ev Aletleri</td>*@
+    </tr>
+
+    }
+
+</table>
+<a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>

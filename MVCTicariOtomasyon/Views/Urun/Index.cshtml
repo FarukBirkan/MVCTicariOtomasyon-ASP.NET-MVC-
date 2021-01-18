@@ -1,0 +1,44 @@
+﻿@using MVCTicariOtomasyon.Models.Siniflar;
+@model List<Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Urun</th>
+        <th>Marka</th>
+        <th>Model</th>
+
+        <th>Stok</th>
+        <th>Alış Fiyat</th>
+        <th>Satış Fiyat</th>
+        <th>Kategori</th>
+        <th>Görsel</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.UrunId</td>
+            <td>@u.UrunAd</td>
+            <td>@u.Marka</td>
+            <td>@u.Model</td>
+            <td>@u.Stok</td>
+            <td>@u.AlisFiyat</td>
+            <td>@u.SatisFiyat</td>
+            <td>@u.Kategori.KategoriAdi</td>
+            <td>@u.UrunGorsel</td>
+          <td><a href="/Urun/UrunSil/@u.UrunId" class="btn btn-danger">Sil</a></td>
+          <td><a href="/Urun/UrunGetir/@u.UrunId" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/Urun/YeniUrun/" class="btn btn-outline-primary">Yeni Ürün Ekle</a>
+@*<button class="btn btn-primary">Yeni Ürün</button>*@
+

@@ -1,0 +1,46 @@
+﻿@using MVCTicariOtomasyon.Models.Siniflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "DepartmanPersonelSatıs";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+
+<h2>Departman Personel Satış Bilgileri</h2>
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Personel Adı : @ViewBag.PER</li>
+</ol>
+<br />
+<table class="table table-avatar">
+    <tr>
+        <th>Satış Id</th>
+        <th>Tarih</th>
+        <th>Cari</th>
+        <th>Ürün</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Yazdır</th>
+    </tr>
+    @*@foreach (var x in Model)
+    {
+
+
+    <tr>
+        <td>@x.SatisId </td>
+        <td>@x.Tarih</td>
+        <td>@x.Cari.CariAd +  +@x.Cari.CariSoyad</td>
+        <td>@x.Urun.UrunAd</td>
+        <td>@x.Fiyat</td>
+        <td>@x.Adet</td>
+        <td>@x.ToplamTutar</td>
+        <td>@x.CariId</td>
+        <td>@x.PersonelId</td>
+        
+        
+        <td><a href="#" class="btn btn-default"> Yazdır </a></td>
+        
+    </tr>
+    }*@
+</table>
